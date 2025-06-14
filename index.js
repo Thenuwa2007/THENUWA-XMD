@@ -82,7 +82,7 @@ console.log('THENUWA XMD ᴄᴏɴᴇᴄᴛᴇᴅ✅')
   
 let up = `┏━━━━━━━━━━━━━━━┓
 ┃ 🤖 BOT       : THENUWA XMD BOT CONNECTED ✅
-┃ 👑 𝙊𝙬𝙣𝙚𝙧     : 𝙲𝚈𝙱𝙴𝚁 𝚇 𝚃𝙷𝙴𝙽𝚄𝙻𝙰
+┃ 👑 𝙊𝙬𝙣𝙚𝙧    : 𝙲𝚈𝙱𝙴𝚁 𝚇 𝚃𝙷𝙴𝙽𝚄𝙻𝙰
 ┃ ⚙️ Version   : 3.0.0 ʙᴇᴛᴀ
 ┃ 💻 Host      : ʀᴇᴘʟɪᴛ
 ┃ ⏱️ Uptime    : 10m 10s
