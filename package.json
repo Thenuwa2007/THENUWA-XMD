@@ -1,12 +1,12 @@
 {
-  "name": "DILSHAN-MD",
+  "name": "THENUWA XMD",
   "version": "1.0.0",
-  "description": "DILSHAN-MD",
+  "description": "THENUWA XMD",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name dilshan-md",
-    "stop": "pm2 stop dilshan-md",
-    "restart": "pm2 restart dilshan-md"
+    "start": "pm2 start index.js --deep-monitoring --attach --name THENUWA XMD",
+    "stop": "pm2 stop THENUWA XMD",
+    "restart": "pm2 restart THENUWA XMD"
   },
   "dependencies": {
    "@whiskeysockets/baileys": "github:MR-LAKIYA/Baileys",
