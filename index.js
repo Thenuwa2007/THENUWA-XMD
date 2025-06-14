@@ -78,7 +78,7 @@ require("./plugins/" + plugin);
 }
 });
 console.log('Plugins installed successful ✅')
-console.log('dilshan-md ᴄᴏɴᴇᴄᴛᴇᴅ✅')
+console.log('THENUWA XMD ᴄᴏɴᴇᴄᴛᴇᴅ✅')
   
 let up = `┏━━━━━━━━━━━━━━━┓
 ┃ 🤖 BOT       : THENUWA XMD BOT CONNECTED ✅
