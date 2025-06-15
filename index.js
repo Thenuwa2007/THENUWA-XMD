@@ -78,11 +78,11 @@ require("./plugins/" + plugin);
 }
 });
 console.log('Plugins installed successful ✅')
-console.log('THENUWA XMD ᴄᴏɴᴇᴄᴛᴇᴅ✅')
+console.log('dilshan-md ᴄᴏɴᴇᴄᴛᴇᴅ✅')
   
 let up = `┏━━━━━━━━━━━━━━━┓
-┃ 🤖 BOT       : THENUWA XMD BOT CONNECTED ✅
-┃ 👑 𝙊𝙬𝙣𝙚𝙧    : 𝙲𝚈𝙱𝙴𝚁 𝚇 𝚃𝙷𝙴𝙽𝚄𝙻𝙰
+┃ 🤖 BOT       : DILSHAN MD BOT CONNECTED ✅
+┃ 👑 𝙊𝙬𝙣𝙚𝙧     : ᴅɪʟꜱʜᴀɴ ᴀꜱʜɪɴꜱᴀ
 ┃ ⚙️ Version   : 3.0.0 ʙᴇᴛᴀ
 ┃ 💻 Host      : ʀᴇᴘʟɪᴛ
 ┃ ⏱️ Uptime    : 10m 10s
@@ -90,12 +90,12 @@ let up = `┏━━━━━━━━━━━━━━━┓
 ┃ 🕒 Time      : 5:00 AM
 ┗━━━━━━━━━━━━━━━┛
 
-✨ 𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙏𝙃𝙀𝙉𝙐𝙒𝘼 𝙓𝙈𝘿 𝘽𝙊𝙏 ✨
+✨ 𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝘿𝙄𝙇𝙎𝙃𝘼𝙉 𝙈𝘿 𝘽𝙊𝙏 ✨
 
 
-🔗 𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 𝙏𝙃𝙀𝙉𝙐𝙒𝘼 𝙓𝙈𝘿💥`;
+🔗 𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 𝘿𝙄𝙇𝙎𝙃𝘼𝙉 𝙈𝘿 💥`;
 
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://raw.githubusercontent.com/Thenuwa2007/BOT-HELPER/refs/heads/main/THENUWA%20XMD.png` }, caption: up })
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://files.catbox.moe/kejp70.jpg` }, caption: up })
 
 }
 })
@@ -219,7 +219,7 @@ command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, i
 })
 }
 app.get("/", (req, res) => {
-res.send("THENUWA XMD Bot running..✅💫");
+res.send("DILSHAN MD Bot running..✅💫");
 });
 app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
 setTimeout(() => {
