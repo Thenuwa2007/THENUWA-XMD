@@ -1,159 +1,100 @@
-const {readEnv} = require('../lib/database')
+const config = require('../config')
 const {cmd , commands} = require('../command')
+const os = require("os")
+const {runtime} = require('../lib/functions')
 
 cmd({
-
     pattern: "menu",
-
-    react: "📁",
-
-    alias: ["panel","commands"],
-
-    desc: "Get bot\'s command list.",
-
+    desc: "To get the menu.",
+    react: "😚",
     category: "main",
-
-    use: '.menu',
-
     filename: __filename
-
 },
-
-async(conn, mek, m,{from, l, quoted, body, isCmd, umarmd, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-
+async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-const config = await readEnv();
-let madeMenu = `╭━━━━∙⋆⋅⋆∙━ ─┉─ • ─┉─⊷
 
-*⇆𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗 𝗩1 ⇆*
+let menu = {
+main: '',
+download: '',
+group: '',
+owner: '',
+convert: '',
+search: '',
+fun: '',
+other: ''
+};
 
-     *${pushname}*
-     
-╰━━━━∙⋆⋅⋆∙━ ─┉─ • ─┉─⊷
-╭───────────────────⊷❒
-> 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚃𝙷𝙴𝙽𝚄𝚆𝙰 𝚇𝙼𝙳-ALL MENU ❒⁠⁠⁠⁠ʕ•ᴥ•ʔ
-⁠⁠⁠⁠╰───────────────────⊷❒
+for (let i = 0; i < commands.length; i++) {
+if (commands[i].pattern && !commands[i].dontAddCommandList) {
+menu[commands[i].category] += `.${commands[i].pattern}\n`;
+ }
+}
 
-╒✦•··············•••••••••··············•··•✦
-🧬◦ *ɴᴀᴍᴇ ʙᴏᴛ* :❖𝚃𝙷𝙴𝙽𝚄𝚆𝙰 𝚇𝙼𝙳❖
-🧬◦ *ᴄʀᴇᴀᴛᴏʀ* : 𝙲𝚈𝙱𝙴𝚁 𝚇 𝚃𝙷𝙴𝙽𝚄𝙻𝙰 〽️𝙳
-🧬◦ *ᴠᴇʀsɪᴏɴs* : 𝚅.1.0.0✨
-🧬◦ *ᴍᴇɴᴜ ᴄᴍᴅ* : 𝙼𝙴𝙽𝚄📁
-🧬◦ *ᴊᴏɪɴ ᴍʏ ᴄʜᴀɴɴᴇʟ* :  https://whatsapp.com/channel/0029VbA97wVElagprBAP9W0n
-🧬◦ *ᴄᴏɴᴛᴀᴄᴛ ᴡɪᴛʜ sɪʟᴇɴᴛ-ᴋɪʟʟᴇʀ*: https://wa.me/94724926574?text=*Hi_I_AM_THENUWA_XMD_OWNER*l
-╘✦•·············•••••••••··················•✦
+let madeMenu = `
+🌟👑 𝗤𝘂𝗲𝗲𝗻_𝗔𝗻𝗷𝘂 𝗠𝗗 - 𝗠𝗮𝗶𝗻 𝗠𝗲𝗻𝘂 👑🌟
 
-*╭────❒⁠⁠⁠⁠* *📥 DOWNLOADER-CMD 📥* *❒⁠⁠⁠⁠* 
-*┋* *.ғʙ <ᴜʀʟ>*
-*┋* *.ɪɴꜱᴛᴀ <ᴜʀʟ>*
-*┋* *.ᴠɪᴅᴇᴏ <ᴜʀʟ>*
-*┋* *.ɢᴅʀɪᴠᴇ <ᴜʀʟ>*
-*┋* *.ᴛᴡɪᴛᴛᴇʀ <ᴜʀʟ>*
-*┋* *.ᴛᴛ<ᴜʀʟ>*
-*┋* *.ᴍᴇᴅɪᴀғɪʀᴇ <ᴜʀʟ>*
-*┋* *.ꜱᴏɴɢ <ϙᴜᴇʀʏ>*
-*┋* *.ᴘʟᴀʏ <ᴜʀʟ>*
-*┋* *.ᴠɪᴅᴇᴏ <ϙᴜᴇʀʏ>*
-*┋* *.ᴠɪᴅᴇᴏ <ᴜʀʟ>*
-*┋* *.ɪᴍɢ <ϙᴜᴇʀʏ>*
-*┋* *.ᴀᴘᴋ <ɴᴀᴍᴇ>*
-*┕───────────────────❒*
+      👋 HELLO, ${pushname}!
 
-*╭────❒⁠⁠⁠⁠* *🔎 SEARCH-CMD 🔍* *❒⁠⁠⁠⁠* 
-*┋* *.ʏᴛꜱ  <ᴛᴇxᴛ>*
-*┋* *.ʏᴛꜱ1 <ᴛᴇxᴛ>*
-*┋* *.ᴍᴏᴠɪᴇ <ᴛᴇxᴛ>*
-*┋* *.ɪᴍɢ <ᴛᴇxᴛ>*
-*┕───────────────────❒*
+✨ 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 𝗤𝘂𝗲𝗲𝗻_𝗔𝗻𝗷𝘂! ✨ 
 
-*╭────❒⁠⁠⁠⁠* *🧠 AI-CMD 🧠* *❒⁠⁠⁠⁠* 
-*┋* *.ɢᴘᴛ <ᴛᴇxᴛ>*
-*┋* *.ᴀɪ <ᴛᴇxᴛ>*
-*┕───────────────────❒*
+📊 *𝗕𝗼𝘁 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻:*
+────────────────────
+⏳ *𝗥𝘂𝗻𝘁𝗶𝗺𝗲:* ${runtime(process.uptime())}
+👤 *𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲:* 𝗝𝗮𝗻𝗶𝘁𝗵 𝗥𝗮𝘀𝗵𝗺𝗶𝗸𝗮
+📞 *𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿:* ${config.BOT_NUMBER}
+────────────────────
 
-*╭────❒⁠⁠⁠⁠* *👨‍💻 OWNER-CMD 👨‍💻* *❒⁠⁠⁠⁠* 
-*┋* *.ꜱᴜᴘᴘᴏʀᴛ*
-*┋* *.ꜱᴇᴛᴀᴜᴛᴏʙɪᴏ*
-*┋* *.ᴍᴜᴛᴇ*
-*┋* *.ᴜɴᴍᴜᴛᴇ*
-*┋* *.ᴏᴡɴᴇʀ*
-*┋* *.ʀᴇᴘᴏ*
-*┋* *.ꜱʏꜱᴛᴇᴍ*
-*┋* *.ꜱᴛᴀᴛᴜꜱ*
-*┋* *.ʙᴏᴛɪɴꜰᴏ*
-*┋* *.ʀᴇꜱᴛᴀʀᴛ*
-*┕───────────────────❒*
+📥 *𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗠𝗲𝗻𝘂:*
 
-*╭────❒⁠⁠⁠⁠* *👥 GROUP-CMD 👥* *❒⁠⁠⁠⁠* 
-*┋* *.ʀᴇᴍᴏᴠᴇ <ʀᴇᴘʟʏ ғᴏʀ ᴅᴇʟᴇᴛᴇ sᴍs>*
-*┋* *.ᴅᴇʟᴇᴛᴇ <ʀᴇᴘʟʏ ғᴏʀ ᴅᴇʟᴇᴛᴇ sᴍs>*
-*┋* *.ᴀᴅᴅ*
-*┋* *.ᴋɪᴄᴋ*
-*┋* *.sᴇᴛɢᴏᴏᴅʙʏᴇ <ᴛᴇxᴛ>*
-*┋* *.sᴇᴛᴡᴇʟᴄᴏᴍᴇ <ᴛᴇxᴛ>*
-*┋* *.ᴘʀᴏᴍᴏᴛᴇ*
-*┋* *.ᴅᴇᴍᴏᴛᴇ*
-*┋* *.ꜱᴜᴘᴘᴏʀᴛ*
-*┋* *.ɢᴇᴛᴘɪᴄ*
-*┋* *.ʟɪɴᴋ*
-*┕───────────────────❒*
+${menu.download}
 
-*╭────❒⁠⁠⁠⁠* *📃 INFO-CMD 📃* *❒⁠⁠⁠⁠* 
-*┋* *.ᴍᴇɴᴜ*
-*┋* *.ᴀʟɪᴠᴇ*
-*┋* *.ʀᴇʙᴏᴛ*
-*┋* *.ʀᴇꜱᴛᴀʀᴛ*
-*┋* *.ʙᴏᴛɪɴꜰᴏ*
-*┋* *.ꜱᴛᴀᴛᴜꜱ*
-*┋* *.ꜱᴜᴘᴘᴏʀᴛ*
-*┋* *.ᴘɪɴɢ*
-*┋* *.ꜱʏꜱᴛᴇᴍ*
-*┕───────────────────❒*
+────────────────────
+🔧 *𝗠𝗮𝗶𝗻 𝗠𝗲𝗻𝘂:*
 
-*╭────❒⁠⁠⁠⁠* *🎡 CONVERTER-CMD 🎡* *❒⁠⁠⁠⁠* 
-*┋* *.sᴛɪᴄᴋᴇʀ*
-*┕───────────────────❒*
+${menu.main}
 
-*╭────❒⁠⁠⁠⁠* *⛱ RANDOM-CMD ⛱* *❒⁠⁠⁠⁠* 
-*┋* *.ᴋɪɴɢ*
-*┋* *.ᴅᴏɢ*
-*┋* *.ᴀɴɪᴍᴇ*
-*┋* *.ᴀɴɪᴍᴇɢɪʀʟ*
-*┋* *.ᴀɴɪᴍᴇɢɪʀʟ1*
-*┋* *.ᴀɴɪᴍᴇɢɪʀʟ2*
-*┋* *.ᴀɴɪᴍᴇɢɪʀʟ3*
-*┋* *.ᴀɴɪᴍᴇɢɪʀʟ4*
-*┋* *.ᴀɴɪᴍᴇɢɪʀʟ5*
-*┕───────────────────❒*
+────────────────────
+🎉 *𝗙𝘂𝗻 𝗠𝗲𝗻𝘂:*
 
-*╭────❒⁠⁠⁠⁠* *🏜 WALLPAPERS-CMD 🏜* *❒⁠⁠⁠⁠* 
-*┋* *.ɪᴍɢ*
-*┕───────────────────❒*
+${menu.fun}
 
-*╭────❒⁠⁠⁠⁠* *🌐 OTHER-CMD 🌐* *❒⁠⁠⁠⁠* 
-*┋* *.ɴᴇᴡꜱ*
-*┋* *.ᴡᴇᴀᴛʜᴇʀ*
-*┋* *.ᴛʀᴛ*
-*┋* *.ᴍᴏᴠɪᴇ*
-*┋* *.ꜰᴀᴄᴛ*
-*┋* *.ɢɪᴛʜᴜʙꜱᴛᴀʟᴋ*
-*┋* *.ɢᴘᴀꜱꜱ*
-*┋* *.ʜᴀᴄᴋ*
-*┋* *.ǫᴜᴏᴛᴇ*
-*┋* *.ꜱʀᴇᴘᴏ*
-*┋* *.ᴅᴇꜰɪɴᴇ*
-*┕───────────────────❒*
+────────────────────
+👥 *𝗚𝗿𝗼𝘂𝗽 𝗠𝗲𝗻𝘂:*
 
-*❒⁠⁠⁠⁠▭▬▭▬▭▬▭👀▭▬▭▬▭▬▭❒*⁠⁠⁠⁠
+${menu.group}
 
-> *𝗣𝗢𝗪𝗘𝗥𝗘𝗗 𝗕𝗬 𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗 〽️𝗗*
-╘✦•·········••••😄•••············•✦`;
+────────────────────
+🔒 *𝗢𝘄𝗻𝗲𝗿 𝗠𝗲𝗻𝘂:*
 
+${menu.owner}
 
-await conn.sendMessage(from,{image:{url:config.ALIVE_IMG},caption:madeMenu},{quoted:mek})
+────────────────────
+🔄 *𝗖𝗼𝗻𝘃𝗲𝗿𝘁 𝗠𝗲𝗻𝘂:*
 
+${menu.convert}
+
+────────────────────
+🔍 *𝗦𝗲𝗮𝗿𝗰𝗵 𝗠𝗲𝗻𝘂:*
+
+${menu.search}
+
+────────────────────
+⚙️ *𝗢𝘁𝗵𝗲𝗿 𝗠𝗲𝗻𝘂:*
+
+${menu.other}
+
+────────────────────
+*© 𝗤𝘂𝗲𝗲𝗻_𝗔𝗻𝗷𝘂 𝗕𝗼𝘁 - MD* 
+💻 *GitHub:* github.com/Mrrashmika/Queen_Anju-MD
+ 
+
+`
+
+return await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption:madeMenu},{quoted: mek})
 }catch(e){
 console.log(e)
-reply(${e})
+reply(`${e}`)
 }
 })
+
+
