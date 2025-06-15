@@ -7,7 +7,7 @@ const axios = require('axios')
 cmd({
 
     pattern: "menu",
-    react: "📜",
+    react: "📂",
     alias: ["panel","commands"],
     desc: "Get bot\'s command list.",
     category: "main",
@@ -22,7 +22,7 @@ try{
 const config = await readEnv();
 let madeMenu = `╭━━━━∙⋆⋅⋆∙━ ─┉─ • ─┉─⊷
 
-*⇆ ʜɪɪ ᴍʏ ᴅᴇᴀʀ ғʀɪᴇɴᴅ ⇆*
+*⇆ HII MY DEAR FRINENDS...I AM THENUWA XMD ⇆*
 
      *${pushname}*
      
