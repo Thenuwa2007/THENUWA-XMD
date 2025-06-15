@@ -1,29 +1,20 @@
-const {readEnv} = require('../lib/database')
-const {cmd , commands} = require('../command')
+const config = require('../config')
+const { cmd, commands } = require('../command');
+const os = require("os")
+const {runtime} = require('../lib/functions')
+const axios = require('axios')
 
 cmd({
-
-    pattern: "menu",
-
-    react: "📁",
-
-    alias: ["panel","commands"],
-
-    desc: "Get bot\'s command list.",
-
-    category: "main",
-
-    use: '.menu',
-
+    pattern: "menu2",
+    alias: "allmenu",
+    desc: "menu the bot",
+    category: "menu",
+    react: "⚡",
     filename: __filename
-
-},
-
-async(conn, mek, m,{from, l, quoted, body, isCmd, umarmd, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-
-try{
-const config = await readEnv();
-let madeMenu = `╭━━━━∙⋆⋅⋆∙━ ─┉─ • ─┉─⊷
+}, 
+async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+    try {
+        let dec = `╭━━━━∙⋆⋅⋆∙━ ─┉─ • ─┉─⊷
 
 *⇆𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗 𝗩1 ⇆*
 
@@ -147,14 +138,36 @@ let madeMenu = `╭━━━━∙⋆⋅⋆∙━ ─┉─ • ─┉─⊷
 *❒⁠⁠⁠⁠▭▬▭▬▭▬▭👀▭▬▭▬▭▬▭❒*⁠⁠⁠⁠
 
 > *𝗣𝗢𝗪𝗘𝗥𝗘𝗗 𝗕𝗬 𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗 〽️𝗗*
-╘✦•·········••••😄•••············•✦ 
-`
+╘✦•·········••••😄•••············•✦`;
 
+        await conn.sendMessage(
+            from,
+            {
+                image: { url: `https://files.catbox.moe/zqu8s7.jpg` },
+                caption: dec,
+                contextInfo: {
+                    mentionedJid: [m.sender],
+                    forwardingScore: 999,
+                    isForwarded: true,
+                    forwardedNewsletterMessageInfo: {
+                        newsletterJid: '120363420387793916@newsletter',
+                        newsletterName: 'THENUVA XMD',
+                        serverMessageId: 143
+                    }
+                }
+            },
+            { quoted: mek }
+        );
 
-await conn.sendMessage(from,{image:{url:config.ALIVE_IMG},caption:madeMenu},{quoted:mek})
-
-}catch(e){
-console.log(e)
-reply(${e})
-}
-})
+        // Send audio
+        await conn.sendMessage(from, {
+            audio: { url: 'https://github.com/Awais-star-a11y/TESTING-REPO/raw/refs/heads/main/VID-20250118-WA0022.mp3' },
+            mimetype: 'audio/mp4',
+            ptt: true
+        }, { quoted: mek });
+        
+    } catch (e) {
+        console.log(e);
+        reply(`${e}`);
+    }
+});
