@@ -18,7 +18,7 @@ const { sms,downloadMediaMessage } = require('./lib/msg')
 const axios = require('axios')
 const { File } = require('megajs')
 
-const ownerNumber = ['94772194789']
+const ownerNumber = ['94715603835']
 
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
@@ -78,24 +78,24 @@ require("./plugins/" + plugin);
 }
 });
 console.log('Plugins installed successful ✅')
-console.log('dilshan-md ᴄᴏɴᴇᴄᴛᴇᴅ✅')
+console.log('THENUWA XMD CONECTED ✅')
   
 let up = `┏━━━━━━━━━━━━━━━┓
-┃ 🤖 BOT       : DILSHAN MD BOT CONNECTED ✅
-┃ 👑 𝙊𝙬𝙣𝙚𝙧     : ᴅɪʟꜱʜᴀɴ ᴀꜱʜɪɴꜱᴀ
-┃ ⚙️ Version   : 3.0.0 ʙᴇᴛᴀ
+┃ 🤖 BOT       : 𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗 BOT CONNECTED ✅
+┃ 👑 𝙊𝙬𝙣𝙚𝙧     : 𝙲𝚈𝙱𝙴𝚁 𝚇 𝚃𝙷𝙴𝙽𝚄𝙻𝙰
+┃ ⚙️ Version   : 1.0.0 ʙᴇᴛᴀ
 ┃ 💻 Host      : ʀᴇᴘʟɪᴛ
 ┃ ⏱️ Uptime    : 10m 10s
 ┃ 📆 Date      : 2025/06/01
 ┃ 🕒 Time      : 5:00 AM
 ┗━━━━━━━━━━━━━━━┛
 
-✨ 𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝘿𝙄𝙇𝙎𝙃𝘼𝙉 𝙈𝘿 𝘽𝙊𝙏 ✨
+★ 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗 𝗕𝗢𝗧 👋
 
 
-🔗 𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 𝘿𝙄𝙇𝙎𝙃𝘼𝙉 𝙈𝘿 💥`;
+𝗣𝗢𝗪𝗘𝗥𝗘𝗗 𝗕𝗬 𝗧𝗛𝗘𝗡𝗨𝗟𝗔 𝗫𝗠𝗗 〽️𝗗`;
 
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://files.catbox.moe/kejp70.jpg` }, caption: up })
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://files.catbox.moe/jgnhg4.jpg` }, caption: up })
 
 }
 })
@@ -219,7 +219,7 @@ command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, i
 })
 }
 app.get("/", (req, res) => {
-res.send("DILSHAN MD Bot running..✅💫");
+res.send("THENUWA XMD Bot running..✅💫");
 });
 app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
 setTimeout(() => {
