@@ -212,7 +212,7 @@ cmd(
 
       // Send song details with format options
       let desc = `
- 🎵 DILSHAN MD AUDIO DOWNLOADER 🎵
+ 🎵 THENUWA XMD 〽️D AUDIO DOWNLOADER 🎵
 
 📌 *Title:* ${ytdata.title}
 🎤 *Channel:* ${ytdata.author.name}
@@ -226,7 +226,7 @@ cmd(
 2. Document Format 📁
 3. Voice Note Format 🎙️
 
-> ☀©POWERD BY DILSHAN MD`;
+> 𝗣𝗢𝗪𝗘𝗥𝗘𝗗 𝗕𝗬 𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗 〽️𝗗`;
 
       const vv = await frozen.sendMessage(
         from,
