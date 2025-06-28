@@ -480,7 +480,7 @@ if (!isReact && senderNumber === botNumber) {
   });
 
   app.get("/", (req, res) => {
-    res.send("HANS BYTE MD LAUNCHED AND READY TO USE ✅");
+    res.send("THENUWA XMD LAUNCHED AND READY TO USE ✅");
   });
   
   app.listen(port, () => 
