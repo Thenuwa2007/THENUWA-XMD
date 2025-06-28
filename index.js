@@ -41,7 +41,7 @@ const ownerNumber = config.OWNER_NUM;
 if (!fs.existsSync(__dirname + "/sessions/creds.json")) {
   if (!config.SESSION_ID)
     return console.log("Please add your session to SESSION_ID env !!");
-  const sessdata = config.SESSION_ID.replace('HANS-BYTE~', '');
+  const sessdata = config.SESSION_ID.replace('THENUWA XMD~', '');
   const filer = File.fromURL(`https://mega.nz/file/${sessdata}`);
   filer.download((err, data) => {
     if (err) throw err;
@@ -64,7 +64,7 @@ async function connectToWA() {
   
 //===========================
 
-console.log("Connecting HANS BYTE");
+console.log("Connecting 𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗");
 
 const { state, saveCreds } = await useMultiFileAuthState(__dirname + "/sessions/");
 const { version } = await fetchLatestBaileysVersion();
@@ -95,35 +95,35 @@ const robin = makeWASocket({
         }
       });
       console.log("ALL PLUGINS SUCCESFULLY INSTALLED   ✅");
-      console.log("HANS BYTE HAS SUCCESFULLY BEEN CONNECTED TO YOUR WHATSAPP ✅");
+      console.log("THENUWA XMD BYTE HAS SUCCESFULLY BEEN CONNECTED TO YOUR WHATSAPP ✅");
 
       let up = `
   ╔═════════════════╗
-  ║      𝐇𝐀𝐍𝐒 𝐁𝐘𝐓𝐄 X 𝐁𝐎𝐓           
+  ║      𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗 𝗕𝗢𝗧           
   ║  SUCCESSFULLY CONNECTED ✅ 😍        
   ╠═════════════════╣
   ║      • PREFIX: [ *${config.PREFIX}* ]            
   ╟─────────────────╢
   ║ ♻ 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊         
-  ║ https://whatsapp.com/channel/0029VaZDIdxDTkKB4JSWUk1O              
+  ║ https://whatsapp.com/channel/0029VbA97wVElagprBAP9W0n            
   ╟─────────────────╢
   ║ ♻ 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊          
-  ║ https://chat.whatsapp.com/K0GPSSfr16j8VsIAU8uHYM                 
+  ║ https://chat.whatsapp.com/H8leJUPcIwLGXarH1YcLge                
   ╠═════════════════╣
-  ║   𝐇𝐀𝐍𝐒 𝐁𝐘𝐓𝐄 𝐌𝐃               
-  ║ > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ Hans Tech Team        
+  ║   𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗               
+  ║ > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ THENUWA X 〽️D        
   ╚═════════════════╝`;
-      let up1 = `Hello Mr Hans i succesfully deployed HANS BYTE`;
+      let up1 = `Hello Mr THENULA i succesfully deployed THENUWA XMD`;
 
       robin.sendMessage(ownerNumber + "@s.whatsapp.net", {
         image: {
-          url: `https://i.ibb.co/6Rxhg321/Chat-GPT-Image-Mar-30-2025-03-39-42-AM.png`,
+          url: `https://files.catbox.moe/jgnhg4.jpg`,
         },
         caption: up,
       });
       robin.sendMessage("237696900612@s.whatsapp.net", {
         image: {
-          url: `https://i.ibb.co/6Rxhg321/Chat-GPT-Image-Mar-30-2025-03-39-42-AM.png`,
+          url: `https://files.catbox.moe/jgnhg4.jpg`,
         },
         caption: up1,
       });
