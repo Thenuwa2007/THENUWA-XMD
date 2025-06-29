@@ -146,8 +146,9 @@ const robin = makeWASocket({
         image: { url: `https://files.catbox.moe/jgnhg4.jpg` },
         caption: up1,
       });
-    }
-  });
+    })(); // end of async block
+  }
+});
   robin.ev.on("creds.update", saveCreds);
   robin.ev.on("messages.upsert", async (mek) => {
     mek = mek.messages[0];
