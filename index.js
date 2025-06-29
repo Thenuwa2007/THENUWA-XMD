@@ -40,21 +40,16 @@ const ownerNumber = config.OWNER_NUM;
   globalThis.fetch = fetch;
 })();
 
-// Handle session authentication
 if (!fs.existsSync(__dirname + "/sessions/creds.json")) {
-  if (!config.SESSION_ID) {
-    console.log("Please add your session to SESSION_ID env !!");
-    process.exit(1);
-  }
-  const sessdata = config.SESSION_ID.replace("THENUWA-XMD~", "");
+  if (!config.SESSION_ID)
+    return console.log("Please add your session to SESSION_ID env !!");
+  const sessdata = config.SESSION_ID.replace('THENUWA-XMD~', '');
   const filer = File.fromURL(`https://mega.nz/file/${sessdata}`);
   filer.download((err, data) => {
-    if (err) {
-      console.error("Failed to download session:", err);
-      process.exit(1);
-    }
-    fs.writeFileSync(__dirname + "/sessions/creds.json", data);
-    console.log("Session downloaded ✅");
+    if (err) throw err;
+    fs.writeFile(__dirname + "/sessions/creds.json", data, () => {
+      console.log("Session downloaded ✅");
+    });
   });
 }
 
