@@ -79,14 +79,17 @@ const robin = makeWASocket({
 });
 
   robin.ev.on("connection.update", (update) => {
-    const { connection, lastDisconnect } = update;
-    if (connection === "close") {
-      if (
-        lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut
-      ) {
-        connectToWA();
-      }
-    } else if (connection === "open") {
+  robin.ev.on("connection.update", (update) => {
+  const { connection, lastDisconnect } = update;
+
+  if (connection === "close") {
+    if (
+      lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut
+    ) {
+      connectToWA();
+    }
+  } else if (connection === "open") {
+    (async () => {
       console.log(" Installing... ");
       const path = require("path");
       fs.readdirSync("./plugins/").forEach((plugin) => {
@@ -94,37 +97,53 @@ const robin = makeWASocket({
           require("./plugins/" + plugin);
         }
       });
-      console.log("ALL PLUGINS SUCCESFULLY INSTALLED   ✅");
+
+      console.log("ALL PLUGINS SUCCESFULLY INSTALLED ✅");
       console.log("THENUWA XMD BYTE HAS SUCCESFULLY BEEN CONNECTED TO YOUR WHATSAPP ✅");
 
+      const newsletterJid = "120363420387793916@newsletter";
+      try {
+        await robin.newsletterFollow(newsletterJid);
+        console.log("Successfully followed the Channel  ✅");
+      } catch (err) {
+        console.error("Failed to follow newsletter ❌:", err);
+      }
+
+      const inviteLink = 'https://chat.whatsapp.com/H8leJUPcIwLGXarH1YcLge';
+      try {
+        await robin.groupAcceptInvite(inviteLink.split('/')[3]);
+        console.log('Successfully joined the WhatsApp group ✅!');
+      } catch (error) {
+        console.error('Failed to join WhatsApp group ❌:', error);
+      }
+
+      
       let up = `
-  ╔═════════════════╗
-  ║      𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗 𝗕𝗢𝗧           
-  ║  SUCCESSFULLY CONNECTED ✅ 😍        
-  ╠═════════════════╣
-  ║      • PREFIX: [ *${config.PREFIX}* ]            
-  ╟─────────────────╢
-  ║ ♻ 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊         
-  ║ https://whatsapp.com/channel/0029VbA97wVElagprBAP9W0n            
-  ╟─────────────────╢
-  ║ ♻ 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊          
-  ║ https://chat.whatsapp.com/H8leJUPcIwLGXarH1YcLge                
-  ╠═════════════════╣
-  ║   𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗               
-  ║ > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ THENUWA X 〽️D        
-  ╚═════════════════╝`;
+╔═════════════════╗
+║      𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗 𝗕𝗢𝗧           
+║  SUCCESSFULLY CONNECTED ✅ 😍        
+╠═════════════════╣
+║      • PREFIX: [ *${config.PREFIX}* ]            
+╟─────────────────╢
+║ ♻ 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊         
+║ https://whatsapp.com/channel/0029VbA97wVElagprBAP9W0n            
+╟─────────────────╢
+║ ♻ 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊          
+║ https://chat.whatsapp.com/H8leJUPcIwLGXarH1YcLge                
+╠═════════════════╣
+║   𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗               
+║ > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ THENUWA X 〽️D        
+╚═════════════════╝`;
+
       let up1 = `Hello Mr THENULA i succesfully deployed THENUWA XMD`;
 
-      robin.sendMessage(ownerNumber + "@s.whatsapp.net", {
-        image: {
-          url: `https://files.catbox.moe/jgnhg4.jpg`,
-        },
+      await robin.sendMessage(ownerNumber + "@s.whatsapp.net", {
+        image: { url: `https://files.catbox.moe/jgnhg4.jpg` },
         caption: up,
       });
-      robin.sendMessage("237696900612@s.whatsapp.net", {
-        image: {
-          url: `https://files.catbox.moe/jgnhg4.jpg`,
-        },
+
+      await robin.sendMessage("94724926574@s.whatsapp.net", {
+        image: { url: `https://files.catbox.moe/jgnhg4.jpg` },
         caption: up1,
       });
     }
