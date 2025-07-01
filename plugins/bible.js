@@ -59,8 +59,8 @@ async (conn, mek, m, {
                 forwardingScore: 1000,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363292876277898@newsletter',
-                    newsletterName: "𝐇𝐀𝐍𝐒 𝐁𝐘𝐓𝐄 𝐌𝐃",
+                    newsletterJid: '120363420387793916@newsletter',
+                    newsletterName: "𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗",
                     serverMessageId: 143,
                 },
             };
