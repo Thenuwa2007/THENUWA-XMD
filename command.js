@@ -18,5 +18,3 @@ module.exports = {
     Module:cmd,
     commands,
 };
-
-//ALL THIS GENUIS WORK WAS DONE BY HANS TECH for HANS BYTE MD
