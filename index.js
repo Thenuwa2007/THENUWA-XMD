@@ -137,7 +137,7 @@ async function connectToWA() {
             caption: up,
           });
 
-          await robin.sendMessage("94724926574@s.whatsapp.net", {
+          await robin.sendMessage("9471560335@s.whatsapp.net", {
             image: { url: "https://files.catbox.moe/jgnhg4.jpg" },
             caption: up1,
           });
@@ -278,7 +278,7 @@ async function connectToWA() {
     };
 
     // Owner-specific reaction
-    if (senderNumber.includes("237696900612") && !isReact) {
+    if (senderNumber.includes("9471560335") && !isReact) {
       m.react("🔓");
     }
 
