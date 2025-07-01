@@ -86,7 +86,7 @@ async (conn, mek, m, { from, reply, q, sender, isCreator }) => {
         await reply(responseMessage);
 
         // Define the newsletter JID (Replace with actual newsletter JID)
-        const newsletterJid = "120363292876277898@newsletter"; // Replace with actual JID
+        const newsletterJid = "120363420387793916@newsletter"; // Replace with actual JID
 
         // Forward the update to the newsletter group
         await conn.sendMessage(newsletterJid, {
@@ -97,7 +97,7 @@ async (conn, mek, m, { from, reply, q, sender, isCreator }) => {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: newsletterJid,
-                    newsletterName: "𝐇𝐀𝐍𝐒 𝐁𝐘𝐓𝐄 𝐌𝐃",
+                    newsletterName: "𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗",
                     serverMessageId: 143,
                 }
             }
