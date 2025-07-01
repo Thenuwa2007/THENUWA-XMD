@@ -26,8 +26,8 @@ cmd({
       'forwardingScore': 0x3e7,
       'isForwarded': true,
       'forwardedNewsletterMessageInfo': {
-        'newsletterJid': '120363292876277898@newsletter',
-        'newsletterName': "𝐇𝐀𝐍𝐒 𝐁𝐘𝐓𝐄 𝐌𝐃",
+        'newsletterJid': '120363420387793916@newsletter',
+        'newsletterName': "𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠�",
         'serverMessageId': 0x8f
       }
     };
