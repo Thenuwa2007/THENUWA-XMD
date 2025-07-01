@@ -9,8 +9,8 @@ const newsletterContext = {
     forwardingScore: 1000,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363292876277898@newsletter',
-        newsletterName: "𝐇𝐀𝐍𝐒 𝐁𝐘𝐓𝐄 𝐌𝐃",
+        newsletterJid: '120363420387793916@newsletter',
+        newsletterName: "𝗧𝗛𝗘𝗡𝗨𝗪𝗔 𝗫𝗠𝗗",
         serverMessageId: 143,
     }
 };
@@ -71,7 +71,7 @@ cmd({
 │ 🎞️ Quality: ${video_quality}
 │ 🎧 Audio Quality: ${audi_quality}
 ╰──────────●●►
-*📥 Downloaded via HANS BYTE MD*`.trim();
+*📥 Downloaded via THENUWA XMD *`.trim();
 
             await conn.sendMessage(from, {
                 image: { url: thumbnail },
@@ -83,7 +83,7 @@ cmd({
             await conn.sendMessage(from, {
                 video: { url: video_url },
                 mimetype: 'video/mp4',
-                caption: "*🎥 HANS BYTE MD*",
+                caption: "*🎥 THENUWA XMD*",
                 contextInfo: messageContext
             }, { quoted: mek });
 
@@ -92,7 +92,7 @@ cmd({
                 document: { url: video_url },
                 mimetype: 'video/mp4',
                 fileName: `${title}.mp4`,
-                caption: "*📁 HANS BYTE MD*",
+                caption: "*📁 THENUWA XMD*",
                 contextInfo: messageContext
             }, { quoted: mek });
 
@@ -150,7 +150,7 @@ cmd({
 │ 🎞️ Quality: ${video_quality}
 │ 🎧 Audio Quality: ${audi_quality}
 ╰──────────●●►
-*📥 Powered by HANS BYTE MD*`.trim();
+*📥 Powered by THENUWA XMD*`.trim();
 
         await conn.sendMessage(from, {
             image: { url: thumbnail },
